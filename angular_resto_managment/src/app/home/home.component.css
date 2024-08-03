@@ -1,0 +1,49 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.hero-header {
+    background-image: url('../../assets/image3.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.navbar-brand h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+.display-3 {
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.bigger-text {
+    font-size: 3rem;
+    /* Ajustez cette valeur selon vos besoins */
+}
+
+.nav-item-spacing .nav-link {
+    margin-right: 1.9rem;
+    /* Ajustez cette valeur selon vos besoins */
+}

@@ -1,0 +1,61 @@
+<app-admin-template></app-admin-template>
+<router-outlet></router-outlet>
+<pre>
+
+    
+</pre>
+
+<section class="container my-5">
+    <div *ngIf="panier">
+        <h2 class="text-center mb-4">Mon Panier</h2>
+
+        <!-- Liste des plats dans le panier -->
+        <div class="row">
+            <div class="col-md-6 mb-4" *ngFor="let plat of plats">
+                <div class="card shadow-sm border-light">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ plat.platName }}</h3>
+                        <p class="card-text">
+                            <strong>Quantité:</strong>
+                            <input type="number" [(ngModel)]="updatedQuantity[plat.id]" (ngModelChange)="onQuantityChange(plat.id, $event)" min="1" class="form-control w-auto d-inline-block ml-2" />
+                        </p>
+                        <p class="card-text">
+                            <strong>Prix unitaire:</strong> {{ plat.price }} €
+                        </p>
+                        <p class="card-text">
+                            <strong>Prix total:</strong> {{ plat.price * (updatedQuantity[plat.id] || 1) }} €
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn btn-danger" (click)="removePlat(plat.id)">
+                                <i class="fas fa-trash"></i> Supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total du panier -->
+        <div class="row mb-4">
+            <div class="col text-end">
+                <h4><strong>Total:</strong> {{ totalPrice }} €</h4>
+            </div>
+        </div>
+
+        <!-- Informations sur la table et bouton pour convertir en commande -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="tableNumero">Numéro de la Table:</label>
+                    <input type="number" id="tableNumero" [(ngModel)]="tableNumero" min="1" required class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-end">
+                <button type="button" class="btn btn-success btn-lg w-100" (click)="convertPanierToCommande()">
+                    <i class="fas fa-check"></i> Convertir en commande
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

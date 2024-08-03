@@ -1,0 +1,62 @@
+<app-admin-template></app-admin-template>
+<router-outlet></router-outlet>
+<section class="vh-100 bg-image" style="background-image:url('../../assets/image2.jpg');">
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+        <div class="row d-flex justify-content-start align-items-center h-100">
+            <pre>
+
+
+
+                </pre>
+            <div class="card" style="border-radius: 15px; width: 100%; max-width: 500px;">
+                <div class="card-body">
+                    <h2 class="text-uppercase text-center mb-5">Revenu</h2>
+
+                    <form [formGroup]="revenuForm" (ngSubmit)="getRevenu()">
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="tableId">ID de la Table</label>
+                            <input id="tableId" formControlName="tableId" type="number" class="form-control form-control-lg" placeholder="Enter table ID" required />
+                            <div *ngIf="revenuForm.get('tableId')?.touched && revenuForm.get('tableId')?.invalid">
+                                <small class="text-danger" *ngIf="revenuForm.get('tableId')?.errors?.['required']">
+                                    L'ID de la table est requis.
+                                    </small>
+                                <small class="text-danger" *ngIf="revenuForm.get('tableId')?.errors?.['min']">
+                                    L'ID de la table doit être un nombre positif.
+                                    </small>
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="date">Date</label>
+                            <input id="date" formControlName="date" type="date" class="form-control form-control-lg" required />
+                            <div *ngIf="revenuForm.get('date')?.touched && revenuForm.get('date')?.invalid">
+                                <small class="text-danger" *ngIf="revenuForm.get('date')?.errors?.['required']">
+                                    La date est requise.
+                                    </small>
+                            </div>
+                        </div>
+                        <pre>
+
+
+                            </pre>
+
+                        <button type="submit" class="btn btn-success btn-lg gradient-custom-4 text-body" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Obtenir le Revenu
+                            </button>
+
+                        <div *ngIf="revenu !== null" class="text-center mt-4">
+                            <h3>Revenu: {{ revenu | currency }}</h3>
+                        </div>
+                        <div *ngIf="error" class="text-center mt-2">
+                            <p class="text-danger">{{ error }}</p>
+                        </div>
+                        <pre>
+
+
+                            </pre>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

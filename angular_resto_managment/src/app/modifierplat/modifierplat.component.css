@@ -1,0 +1,68 @@
+/* Styles pour la section contenant le formulaire */
+
+.section-container {
+    position: relative;
+    background-color: #f0f2f5;
+    padding: 2rem 0;
+}
+
+
+/* Styles pour la superposition d'arrière-plan */
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/testimonial-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+
+/* Styles pour les cartes */
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #17a2b8;
+    /* Couleur de fond personnalisée */
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+
+/* Espacement et style des boutons */
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #ffffff;
+}

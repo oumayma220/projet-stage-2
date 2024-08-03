@@ -1,0 +1,50 @@
+<app-admin-template></app-admin-template>
+<router-outlet></router-outlet>
+<pre>
+
+
+    
+</pre>
+<div *ngIf="commande; else loading" class="commande-details">
+    <h2 class="text-center mb-4">Détails de la Commande</h2>
+
+    <div class="mb-3">
+        <strong>ID de la Commande:</strong> <span>{{ commande.id }}</span>
+    </div>
+    <div class="mb-3">
+        <strong>Date:</strong> <span>{{ commande.date | date:'short' }}</span>
+    </div>
+    <div class="mb-3">
+        <strong>Numéro de Table:</strong> <span>{{ commande.tableNumero }}</span>
+    </div>
+
+    <h3 class="mt-4 mb-3">Plats Commandés</h3>
+    <table class="table table-bordered commande-table">
+        <thead>
+            <tr>
+                <th>Quantité</th>
+                <th>Nom du Plat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plat of getPlatQuantities()">
+                <td>{{ plat.value }}</td>
+                <td>{{ commande.platNames[plat.key] || 'Nom inconnu' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mt-4">
+        <strong>Total:</strong> <span>{{ commande.totalPrice | currency:'USD' }}</span>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+        <button (click)="confirmCommande()" [disabled]="isCommandeConfirmed" class="btn btn-success btn-lg">
+            Confirmer la Commande
+        </button>
+    </div>
+</div>
+
+<ng-template #loading>
+    <p class="text-center mt-5">Chargement des détails de la commande...</p>
+</ng-template>

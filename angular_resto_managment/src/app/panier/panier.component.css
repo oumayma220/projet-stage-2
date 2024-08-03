@@ -1,0 +1,59 @@
+/* Styles pour la section du panier */
+
+.container {
+    padding: 20px;
+}
+
+
+/* Styles pour les cartes de plats */
+
+.card {
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Styles pour les titres de cartes */
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/* Styles pour les boutons */
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+
+/* Styles pour les boutons de suppression */
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+
+/* Styles pour les entrées */
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1.25rem;
+}

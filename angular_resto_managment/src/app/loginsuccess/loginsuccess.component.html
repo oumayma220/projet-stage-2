@@ -1,0 +1,30 @@
+<app-admin-template></app-admin-template>
+<router-outlet></router-outlet>
+<pre>
+
+
+</pre>
+
+<section class="container my-4">
+    <div class="d-flex justify-content-between mb-4">
+        <h2 class="text-uppercase">Menu</h2>
+
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col mb-4" *ngFor="let plat of plats">
+            <div class="card shadow-sm border-light">
+                <img [src]="plat.image" class="card-img-top" alt="Image du plat">
+                <div class="card-body">
+                    <h5 class="card-title">{{ plat.platName }}</h5>
+                    <p class="card-text">Prix: {{ plat.price }} €</p>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-success" (click)="addToPanier(plat.id, 1)" [disabled]="isPlatAdded(plat.id)">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

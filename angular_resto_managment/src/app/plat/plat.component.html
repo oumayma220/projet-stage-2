@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand font-weight-bold" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-item-spacing" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active font-weight-bold" aria-current="page" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active font-weight-bold" aria-current="page" routerLink="/user">user management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active font-weight-bold" aria-current="page" routerLink="/table">tables</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active font-weight-bold" aria-current="page" routerLink="/plat">Menu management</a>
+                </li>
+
+            </ul>
+
+
+            <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<section class="vh-100">
+    <div class="background-overlay"></div>
+    <div class="container-fluid h-100 d-flex flex-column">
+        <pre>
+
+            
+        </pre>
+        <div class="d-flex justify-content-start p-4">
+            <button class="btn btn-info" routerLink="/addplat">
+                <i class="fa fa-plus"></i> Ajouter un Plat
+            </button>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col mb-4" *ngFor="let plat of plats">
+                <div class="card shadow-sm rounded border-light">
+                    <img [src]="plat.image" class="card-img-top" alt="Image du plat" style="object-fit: cover; height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ plat.platName }}</h5>
+                        <p class="card-text">Prix: {{ plat.price }} €</p>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-danger btn-sm me-2" (click)="deletePlat(plat.id)">
+                                <i class="bi bi-trash"></i> Supprimer
+                            </button>
+                            <button class="btn btn-success btn-sm" [routerLink]="['/modifierplat', plat.id]">
+                                <i class="bi bi-pencil"></i> Modifier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

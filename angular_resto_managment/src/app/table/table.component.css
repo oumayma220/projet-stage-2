@@ -1,0 +1,58 @@
+.bg-image {
+    background-image: url('../../assets/slider-image1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    /* Fond semi-transparent pour améliorer la lisibilité */
+    height: 100%;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.table-custom {
+    background: rgba(255, 255, 255, 0.9);
+    /* Fond blanc avec transparence pour le tableau */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.table-custom thead {
+    background-color: #007bff;
+    /* Couleur de fond pour l'en-tête */
+    color: #fff;
+}
+
+.table-custom th,
+.table-custom td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-custom .btn {
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+.table-custom .btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.table-custom .btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.table-custom .btn:hover {
+    opacity: 0.9;
+}

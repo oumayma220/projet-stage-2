@@ -1,0 +1,80 @@
+/* Styles pour la section contenant le formulaire */
+
+section.vh-100 {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/slider-image1.jpg');
+    /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+
+/* Styles pour le conteneur du formulaire */
+
+.container-fluid {
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    /* Fond presque opaque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre légère */
+}
+
+
+/* Styles pour la carte du formulaire */
+
+.card {
+    border-radius: 15px;
+    background: white;
+}
+
+
+/* Styles pour les éléments de formulaire */
+
+.form-outline {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-control-lg {
+    font-size: 1.125rem;
+    padding: 0.75rem;
+}
+
+
+/* Bouton personnalisé */
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-primary:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-lg {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+}

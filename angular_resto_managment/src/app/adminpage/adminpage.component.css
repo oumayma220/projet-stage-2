@@ -1,0 +1,20 @@
+.container {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.984);
+    /* Optionnel : Légère transparence pour la carte */
+    padding: 20px;
+    margin-top: -40%;
+    /* Optionnel : Ombre légère autour de la carte */
+}

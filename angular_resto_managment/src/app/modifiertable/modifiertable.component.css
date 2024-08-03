@@ -1,0 +1,63 @@
+/* Styles pour la superposition de l'arrière-plan */
+
+section.vh-100 {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/pngtree-assorted-dishes-of-vegetables-meat-and-fish-on-a-black-stone-image_15731848.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+
+/* Styles pour la carte */
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fond semi-transparent */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ombre plus marquée */
+}
+
+.card-body {
+    padding: 2rem;
+    /* Espacement intérieur */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control-lg {
+    font-size: 1.1rem;
+    /* Taille de police augmentée pour les champs de saisie */
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.alert {
+    border-radius: 0.25rem;
+    padding: 1rem;
+}

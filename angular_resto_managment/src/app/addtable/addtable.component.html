@@ -1,0 +1,47 @@
+<app-admin-template></app-admin-template>
+<router-outlet></router-outlet>
+
+<section class="vh-100">
+    <div class="background-overlay"></div>
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="card" style="border-radius: 15px; width: 100%; max-width: 500px; background: white;">
+                <div class="card-body p-5">
+                    <h2 class="text-uppercase text-center mb-5">Ajouter une Table</h2>
+                    <form class="mx-1 mx-md-4" #tableForm="ngForm" (ngSubmit)="addTable()">
+                        <div class="form-outline mb-4">
+                            <select id="user" class="form-control form-control-lg" [(ngModel)]="table.userId" name="userId" required>
+                                <option *ngFor="let user of users" [value]="user.id">{{ user.fullname }}</option>
+                            </select>
+                            <label class="form-label" for="user">Responsable</label>
+                            <div *ngIf="tableForm.submitted && !tableForm.controls['userId']?.valid" class="text-danger">
+                                User is required.
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="numero" class="form-control form-control-lg" [(ngModel)]="table.numero" name="numero" required>
+                            <label class="form-label" for="numero">Numero</label>
+                            <div *ngIf="tableForm.submitted && !tableForm.controls['numero']?.valid" class="text-danger">
+                                Number is required.
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="etat" class="form-control form-control-lg" [(ngModel)]="table.etat" name="etat">
+                            <label class="form-label" for="etat">État</label>
+                        </div>
+
+                        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                            {{ errorMessage }}
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="tableForm.form.invalid">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

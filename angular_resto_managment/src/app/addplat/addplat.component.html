@@ -1,0 +1,64 @@
+<app-admin-template></app-admin-template>
+
+<router-outlet></router-outlet>
+<pre>
+
+    
+
+</pre>
+<section class="vh-100">
+    <div class="background-overlay"></div>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header text-white bg-info">ajouter un plat</div>
+            <div class="card-body">
+                <form [formGroup]="formulaireForm" novalidate (ngSubmit)="f.form.valid && url && saveform()" #f="ngForm">
+                    <div class="form-group row mb-2">
+                        <label for="propositionNameId" class="col-md-2 col-form-label">
+                        Nom du plat
+                    </label>
+                        <div class="col-md-8">
+                            <input id="propositionNameId" type="text" class="form-control" formControlName="platName" placeholder="Nom(obligatoire)" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-2">
+                        <label for="descriptionId" class="col-md-2 col-form-label">Description
+                    </label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" formControlName="description" id="descriptionId"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="priceId" class="col-md-2 col-form-label">Prix
+                    </label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" formControlName="price" id="priceId"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+
+                        <img [src]="url" height="200">
+                        <br />
+                        <div style="display: flex; align-items: center;">
+                            <label for="fileInput" class="btn btn-info">Sélectionner une image</label>
+                            <div style="margin-left: 10px;">{{ imageName }}</div>
+                        </div>
+                        <input #fileInput id="fileInput" type="file" accept="image/*" (change)="onSelectFile($event)" [hidden]="true">
+                    </div>
+                    <br>
+                    <div class="form-group row mb-2">
+                        <div class="offset-md-2 col-md-8">
+                            <button class="btn btn-info mr-3" type="submit">Sauvegarder</button>
+                            <button class="btn btn-outline-secondary mr-2" type="button" routerLink="/loginsuccess">Annuler</button>
+                            <button class="btn btn-outline-danger mr-2" type="button" routerLink="/loginsuccess">Supprimer</button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,28 @@
+<app-admin-template></app-admin-template>
+<router-outlet></router-outlet>
+
+<section class="vh-100">
+    <div class="background-overlay"></div>
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="card shadow-sm rounded">
+                <div class="card-body p-5">
+                    <h2 class="text-uppercase text-center mb-4">Modifier Utilisateur</h2>
+                    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                        <div class="form-outline mb-4">
+                            <label for="fullname" class="form-label">Nom complet:</label>
+                            <input type="text" class="form-control form-control-lg" id="fullname" formControlName="fullname">
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control form-control-lg" id="email" formControlName="email">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary btn-lg w-100" [disabled]="!userForm.valid">Modifier</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

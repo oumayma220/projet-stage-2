@@ -1,0 +1,35 @@
+<app-admin-template></app-admin-template>
+<router-outlet></router-outlet>
+
+<section class="vh-100">
+    <div class="background-overlay"></div>
+    <div class="container-fluid h-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="card shadow-sm rounded border-light w-75">
+            <div class="card-header bg-info text-white">
+                <h4>Modifier Plat</h4>
+            </div>
+            <div class="card-body">
+                <pre>
+
+                </pre>
+                <form (ngSubmit)="onSubmit()" #platForm="ngForm">
+                    <div class="form-group mb-3">
+                        <label for="platName">Nom du plat</label>
+                        <input type="text" id="platName" class="form-control" [(ngModel)]="plat.platName" name="platName" required placeholder="Nom du plat" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="price">Prix</label>
+                        <input type="number" id="price" class="form-control" [(ngModel)]="plat.price" name="price" required placeholder="Prix du plat" />
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success me-2">Enregistrer</button>
+                        <button type="button" class="btn btn-outline-secondary" routerLink="/plats">Annuler</button>
+                    </div>
+                </form>
+                <pre>
+                    
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>
